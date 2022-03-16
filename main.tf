@@ -30,7 +30,7 @@ module "hello" {
   source  = "joatmon08/hello/random"
   version = "3.0.1"
 
-  hello = random_pet.dog.id
-
-  secret_key = "secret"
+  hello      = random_pet.dog.id
+  secret_key = var.secret_key
 }
+
