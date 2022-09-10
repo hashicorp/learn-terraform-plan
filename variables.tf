@@ -1,4 +1,5 @@
 variable "secret_key" {
   type = string
-  description = "secret key for hello module"
+  sensitive = true
+  description = "Secret key for hello module"
 }

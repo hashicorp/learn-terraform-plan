@@ -1,0 +1,917 @@
+{
+  "format_version": "1.1",
+  "terraform_version": "1.2.8",
+  "variables": {
+    "secret_key": {
+      "value": "secretkey"
+    }
+  },
+  "planned_values": {
+    "root_module": {
+      "resources": [
+        {
+          "address": "docker_container.nginx",
+          "mode": "managed",
+          "type": "docker_container",
+          "name": "nginx",
+          "provider_name": "registry.terraform.io/kreuzwerker/docker",
+          "schema_version": 2,
+          "values": {
+            "attach": false,
+            "capabilities": [],
+            "cpu_set": null,
+            "cpu_shares": null,
+            "destroy_grace_seconds": null,
+            "devices": [],
+            "dns": null,
+            "dns_opts": null,
+            "dns_search": null,
+            "domainname": null,
+            "group_add": null,
+            "host": [],
+            "links": null,
+            "log_opts": null,
+            "logs": false,
+            "max_retry_count": null,
+            "memory": null,
+            "memory_swap": null,
+            "mounts": [],
+            "must_run": true,
+            "name": "hello-terraform",
+            "network_alias": null,
+            "network_mode": null,
+            "networks": null,
+            "networks_advanced": [],
+            "pid_mode": null,
+            "ports": [
+              {
+                "external": 8000,
+                "internal": 80,
+                "ip": "0.0.0.0",
+                "protocol": "tcp"
+              }
+            ],
+            "privileged": null,
+            "publish_all_ports": null,
+            "read_only": false,
+            "remove_volumes": true,
+            "restart": "no",
+            "rm": false,
+            "start": true,
+            "stdin_open": false,
+            "storage_opts": null,
+            "sysctls": null,
+            "tmpfs": null,
+            "tty": false,
+            "ulimit": [],
+            "upload": [],
+            "user": null,
+            "userns_mode": null,
+            "volumes": [],
+            "working_dir": null
+          },
+          "sensitive_values": {
+            "capabilities": [],
+            "command": [],
+            "devices": [],
+            "entrypoint": [],
+            "env": [],
+            "healthcheck": [],
+            "host": [],
+            "labels": [],
+            "mounts": [],
+            "network_data": [],
+            "networks_advanced": [],
+            "ports": [
+              {}
+            ],
+            "security_opts": [],
+            "ulimit": [],
+            "upload": [],
+            "volumes": []
+          }
+        },
+        {
+          "address": "docker_image.nginx",
+          "mode": "managed",
+          "type": "docker_image",
+          "name": "nginx",
+          "provider_name": "registry.terraform.io/kreuzwerker/docker",
+          "schema_version": 0,
+          "values": {
+            "build": [],
+            "force_remove": null,
+            "keep_locally": false,
+            "name": "nginx:latest",
+            "pull_trigger": null,
+            "pull_triggers": null
+          },
+          "sensitive_values": {
+            "build": []
+          }
+        },
+        {
+          "address": "random_pet.dog",
+          "mode": "managed",
+          "type": "random_pet",
+          "name": "dog",
+          "provider_name": "registry.terraform.io/hashicorp/random",
+          "schema_version": 0,
+          "values": {
+            "keepers": null,
+            "length": 2,
+            "prefix": null,
+            "separator": "-"
+          },
+          "sensitive_values": {}
+        }
+      ],
+      "child_modules": [
+        {
+          "resources": [
+            {
+              "address": "module.hello.random_pet.number_2",
+              "mode": "managed",
+              "type": "random_pet",
+              "name": "number_2",
+              "provider_name": "registry.terraform.io/hashicorp/random",
+              "schema_version": 0,
+              "values": {
+                "length": 2,
+                "prefix": null,
+                "separator": "-"
+              },
+              "sensitive_values": {
+                "keepers": {}
+              }
+            },
+            {
+              "address": "module.hello.random_pet.server",
+              "mode": "managed",
+              "type": "random_pet",
+              "name": "server",
+              "provider_name": "registry.terraform.io/hashicorp/random",
+              "schema_version": 0,
+              "values": {
+                "length": 2,
+                "prefix": null,
+                "separator": "-"
+              },
+              "sensitive_values": {
+                "keepers": {}
+              }
+            }
+          ],
+          "address": "module.hello"
+        },
+        {
+          "resources": [
+            {
+              "address": "module.nginx-pet.docker_container.nginx",
+              "mode": "managed",
+              "type": "docker_container",
+              "name": "nginx",
+              "provider_name": "registry.terraform.io/kreuzwerker/docker",
+              "schema_version": 2,
+              "values": {
+                "attach": false,
+                "capabilities": [],
+                "cpu_set": null,
+                "cpu_shares": null,
+                "destroy_grace_seconds": null,
+                "devices": [],
+                "dns": null,
+                "dns_opts": null,
+                "dns_search": null,
+                "domainname": null,
+                "group_add": null,
+                "host": [],
+                "links": null,
+                "log_opts": null,
+                "logs": false,
+                "max_retry_count": null,
+                "memory": null,
+                "memory_swap": null,
+                "mounts": [],
+                "must_run": true,
+                "network_alias": null,
+                "network_mode": null,
+                "networks": null,
+                "networks_advanced": [],
+                "pid_mode": null,
+                "ports": [
+                  {
+                    "external": 8001,
+                    "internal": 80,
+                    "ip": "0.0.0.0",
+                    "protocol": "tcp"
+                  }
+                ],
+                "privileged": null,
+                "publish_all_ports": null,
+                "read_only": false,
+                "remove_volumes": true,
+                "restart": "no",
+                "rm": false,
+                "start": true,
+                "stdin_open": false,
+                "storage_opts": null,
+                "sysctls": null,
+                "tmpfs": null,
+                "tty": false,
+                "ulimit": [],
+                "upload": [],
+                "user": null,
+                "userns_mode": null,
+                "volumes": [],
+                "working_dir": null
+              },
+              "sensitive_values": {
+                "capabilities": [],
+                "command": [],
+                "devices": [],
+                "entrypoint": [],
+                "env": [],
+                "healthcheck": [],
+                "host": [],
+                "labels": [],
+                "mounts": [],
+                "network_data": [],
+                "networks_advanced": [],
+                "ports": [
+                  {}
+                ],
+                "security_opts": [],
+                "ulimit": [],
+                "upload": [],
+                "volumes": []
+              }
+            },
+            {
+              "address": "module.nginx-pet.docker_image.nginx",
+              "mode": "managed",
+              "type": "docker_image",
+              "name": "nginx",
+              "provider_name": "registry.terraform.io/kreuzwerker/docker",
+              "schema_version": 0,
+              "values": {
+                "build": [],
+                "force_remove": null,
+                "keep_locally": false,
+                "name": "nginx:latest",
+                "pull_trigger": null,
+                "pull_triggers": null
+              },
+              "sensitive_values": {
+                "build": []
+              }
+            }
+          ],
+          "address": "module.nginx-pet"
+        }
+      ]
+    }
+  },
+  "resource_changes": [
+    {
+      "address": "docker_container.nginx",
+      "mode": "managed",
+      "type": "docker_container",
+      "name": "nginx",
+      "provider_name": "registry.terraform.io/kreuzwerker/docker",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "attach": false,
+          "capabilities": [],
+          "cpu_set": null,
+          "cpu_shares": null,
+          "destroy_grace_seconds": null,
+          "devices": [],
+          "dns": null,
+          "dns_opts": null,
+          "dns_search": null,
+          "domainname": null,
+          "group_add": null,
+          "host": [],
+          "links": null,
+          "log_opts": null,
+          "logs": false,
+          "max_retry_count": null,
+          "memory": null,
+          "memory_swap": null,
+          "mounts": [],
+          "must_run": true,
+          "name": "hello-terraform",
+          "network_alias": null,
+          "network_mode": null,
+          "networks": null,
+          "networks_advanced": [],
+          "pid_mode": null,
+          "ports": [
+            {
+              "external": 8000,
+              "internal": 80,
+              "ip": "0.0.0.0",
+              "protocol": "tcp"
+            }
+          ],
+          "privileged": null,
+          "publish_all_ports": null,
+          "read_only": false,
+          "remove_volumes": true,
+          "restart": "no",
+          "rm": false,
+          "start": true,
+          "stdin_open": false,
+          "storage_opts": null,
+          "sysctls": null,
+          "tmpfs": null,
+          "tty": false,
+          "ulimit": [],
+          "upload": [],
+          "user": null,
+          "userns_mode": null,
+          "volumes": [],
+          "working_dir": null
+        },
+        "after_unknown": {
+          "bridge": true,
+          "capabilities": [],
+          "command": true,
+          "container_logs": true,
+          "devices": [],
+          "entrypoint": true,
+          "env": true,
+          "exit_code": true,
+          "gateway": true,
+          "healthcheck": true,
+          "host": [],
+          "hostname": true,
+          "id": true,
+          "image": true,
+          "init": true,
+          "ip_address": true,
+          "ip_prefix_length": true,
+          "ipc_mode": true,
+          "labels": true,
+          "log_driver": true,
+          "mounts": [],
+          "network_data": true,
+          "networks_advanced": [],
+          "ports": [
+            {}
+          ],
+          "security_opts": true,
+          "shm_size": true,
+          "ulimit": [],
+          "upload": [],
+          "volumes": []
+        },
+        "before_sensitive": false,
+        "after_sensitive": {
+          "capabilities": [],
+          "command": [],
+          "devices": [],
+          "entrypoint": [],
+          "env": [],
+          "healthcheck": [],
+          "host": [],
+          "labels": [],
+          "mounts": [],
+          "network_data": [],
+          "networks_advanced": [],
+          "ports": [
+            {}
+          ],
+          "security_opts": [],
+          "ulimit": [],
+          "upload": [],
+          "volumes": []
+        }
+      }
+    },
+    {
+      "address": "docker_image.nginx",
+      "mode": "managed",
+      "type": "docker_image",
+      "name": "nginx",
+      "provider_name": "registry.terraform.io/kreuzwerker/docker",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "build": [],
+          "force_remove": null,
+          "keep_locally": false,
+          "name": "nginx:latest",
+          "pull_trigger": null,
+          "pull_triggers": null
+        },
+        "after_unknown": {
+          "build": [],
+          "id": true,
+          "latest": true,
+          "output": true,
+          "repo_digest": true
+        },
+        "before_sensitive": false,
+        "after_sensitive": {
+          "build": []
+        }
+      }
+    },
+    {
+      "address": "module.hello.random_pet.number_2",
+      "module_address": "module.hello",
+      "mode": "managed",
+      "type": "random_pet",
+      "name": "number_2",
+      "provider_name": "registry.terraform.io/hashicorp/random",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "length": 2,
+          "prefix": null,
+          "separator": "-"
+        },
+        "after_unknown": {
+          "id": true,
+          "keepers": true
+        },
+        "before_sensitive": false,
+        "after_sensitive": {
+          "keepers": {}
+        }
+      }
+    },
+    {
+      "address": "module.hello.random_pet.server",
+      "module_address": "module.hello",
+      "mode": "managed",
+      "type": "random_pet",
+      "name": "server",
+      "provider_name": "registry.terraform.io/hashicorp/random",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "length": 2,
+          "prefix": null,
+          "separator": "-"
+        },
+        "after_unknown": {
+          "id": true,
+          "keepers": true
+        },
+        "before_sensitive": false,
+        "after_sensitive": {
+          "keepers": {}
+        }
+      }
+    },
+    {
+      "address": "module.nginx-pet.docker_container.nginx",
+      "module_address": "module.nginx-pet",
+      "mode": "managed",
+      "type": "docker_container",
+      "name": "nginx",
+      "provider_name": "registry.terraform.io/kreuzwerker/docker",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "attach": false,
+          "capabilities": [],
+          "cpu_set": null,
+          "cpu_shares": null,
+          "destroy_grace_seconds": null,
+          "devices": [],
+          "dns": null,
+          "dns_opts": null,
+          "dns_search": null,
+          "domainname": null,
+          "group_add": null,
+          "host": [],
+          "links": null,
+          "log_opts": null,
+          "logs": false,
+          "max_retry_count": null,
+          "memory": null,
+          "memory_swap": null,
+          "mounts": [],
+          "must_run": true,
+          "network_alias": null,
+          "network_mode": null,
+          "networks": null,
+          "networks_advanced": [],
+          "pid_mode": null,
+          "ports": [
+            {
+              "external": 8001,
+              "internal": 80,
+              "ip": "0.0.0.0",
+              "protocol": "tcp"
+            }
+          ],
+          "privileged": null,
+          "publish_all_ports": null,
+          "read_only": false,
+          "remove_volumes": true,
+          "restart": "no",
+          "rm": false,
+          "start": true,
+          "stdin_open": false,
+          "storage_opts": null,
+          "sysctls": null,
+          "tmpfs": null,
+          "tty": false,
+          "ulimit": [],
+          "upload": [],
+          "user": null,
+          "userns_mode": null,
+          "volumes": [],
+          "working_dir": null
+        },
+        "after_unknown": {
+          "bridge": true,
+          "capabilities": [],
+          "command": true,
+          "container_logs": true,
+          "devices": [],
+          "entrypoint": true,
+          "env": true,
+          "exit_code": true,
+          "gateway": true,
+          "healthcheck": true,
+          "host": [],
+          "hostname": true,
+          "id": true,
+          "image": true,
+          "init": true,
+          "ip_address": true,
+          "ip_prefix_length": true,
+          "ipc_mode": true,
+          "labels": true,
+          "log_driver": true,
+          "mounts": [],
+          "name": true,
+          "network_data": true,
+          "networks_advanced": [],
+          "ports": [
+            {}
+          ],
+          "security_opts": true,
+          "shm_size": true,
+          "ulimit": [],
+          "upload": [],
+          "volumes": []
+        },
+        "before_sensitive": false,
+        "after_sensitive": {
+          "capabilities": [],
+          "command": [],
+          "devices": [],
+          "entrypoint": [],
+          "env": [],
+          "healthcheck": [],
+          "host": [],
+          "labels": [],
+          "mounts": [],
+          "network_data": [],
+          "networks_advanced": [],
+          "ports": [
+            {}
+          ],
+          "security_opts": [],
+          "ulimit": [],
+          "upload": [],
+          "volumes": []
+        }
+      }
+    },
+    {
+      "address": "module.nginx-pet.docker_image.nginx",
+      "module_address": "module.nginx-pet",
+      "mode": "managed",
+      "type": "docker_image",
+      "name": "nginx",
+      "provider_name": "registry.terraform.io/kreuzwerker/docker",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "build": [],
+          "force_remove": null,
+          "keep_locally": false,
+          "name": "nginx:latest",
+          "pull_trigger": null,
+          "pull_triggers": null
+        },
+        "after_unknown": {
+          "build": [],
+          "id": true,
+          "latest": true,
+          "output": true,
+          "repo_digest": true
+        },
+        "before_sensitive": false,
+        "after_sensitive": {
+          "build": []
+        }
+      }
+    },
+    {
+      "address": "random_pet.dog",
+      "mode": "managed",
+      "type": "random_pet",
+      "name": "dog",
+      "provider_name": "registry.terraform.io/hashicorp/random",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "keepers": null,
+          "length": 2,
+          "prefix": null,
+          "separator": "-"
+        },
+        "after_unknown": {
+          "id": true
+        },
+        "before_sensitive": false,
+        "after_sensitive": {}
+      }
+    }
+  ],
+  "configuration": {
+    "provider_config": {
+      "docker": {
+        "name": "docker",
+        "full_name": "registry.terraform.io/kreuzwerker/docker",
+        "version_constraint": "~> 2.16.0"
+      },
+      "random": {
+        "name": "random",
+        "full_name": "registry.terraform.io/hashicorp/random",
+        "version_constraint": "3.1.0"
+      }
+    },
+    "root_module": {
+      "resources": [
+        {
+          "address": "docker_container.nginx",
+          "mode": "managed",
+          "type": "docker_container",
+          "name": "nginx",
+          "provider_config_key": "docker",
+          "expressions": {
+            "image": {
+              "references": [
+                "docker_image.nginx.latest",
+                "docker_image.nginx"
+              ]
+            },
+            "name": {
+              "constant_value": "hello-terraform"
+            },
+            "ports": [
+              {
+                "external": {
+                  "constant_value": 8000
+                },
+                "internal": {
+                  "constant_value": 80
+                }
+              }
+            ]
+          },
+          "schema_version": 2
+        },
+        {
+          "address": "docker_image.nginx",
+          "mode": "managed",
+          "type": "docker_image",
+          "name": "nginx",
+          "provider_config_key": "docker",
+          "expressions": {
+            "keep_locally": {
+              "constant_value": false
+            },
+            "name": {
+              "constant_value": "nginx:latest"
+            }
+          },
+          "schema_version": 0
+        },
+        {
+          "address": "random_pet.dog",
+          "mode": "managed",
+          "type": "random_pet",
+          "name": "dog",
+          "provider_config_key": "random",
+          "expressions": {
+            "length": {
+              "constant_value": 2
+            }
+          },
+          "schema_version": 0
+        }
+      ],
+      "module_calls": {
+        "hello": {
+          "source": "joatmon08/hello/random",
+          "expressions": {
+            "hello": {
+              "references": [
+                "random_pet.dog.id",
+                "random_pet.dog"
+              ]
+            },
+            "secret_key": {
+              "references": [
+                "var.secret_key"
+              ]
+            }
+          },
+          "module": {
+            "outputs": {
+              "pet": {
+                "expression": {
+                  "references": [
+                    "random_pet.server.id",
+                    "random_pet.server"
+                  ]
+                }
+              }
+            },
+            "resources": [
+              {
+                "address": "random_pet.number_2",
+                "mode": "managed",
+                "type": "random_pet",
+                "name": "number_2",
+                "provider_config_key": "random",
+                "expressions": {
+                  "keepers": {
+                    "references": [
+                      "var.hello"
+                    ]
+                  }
+                },
+                "schema_version": 0
+              },
+              {
+                "address": "random_pet.server",
+                "mode": "managed",
+                "type": "random_pet",
+                "name": "server",
+                "provider_config_key": "random",
+                "expressions": {
+                  "keepers": {
+                    "references": [
+                      "var.hello",
+                      "var.secret_key"
+                    ]
+                  }
+                },
+                "schema_version": 0
+              }
+            ],
+            "variables": {
+              "hello": {
+                "description": "just a string with who we want to greet"
+              },
+              "secret_key": {
+                "description": "this is a secret"
+              }
+            }
+          },
+          "version_constraint": "3.0.1"
+        },
+        "nginx-pet": {
+          "source": "./nginx",
+          "expressions": {
+            "container_name": {
+              "references": [
+                "random_pet.dog.id",
+                "random_pet.dog"
+              ]
+            },
+            "nginx_port": {
+              "constant_value": 8001
+            }
+          },
+          "module": {
+            "resources": [
+              {
+                "address": "docker_container.nginx",
+                "mode": "managed",
+                "type": "docker_container",
+                "name": "nginx",
+                "provider_config_key": "docker",
+                "expressions": {
+                  "image": {
+                    "references": [
+                      "docker_image.nginx.latest",
+                      "docker_image.nginx"
+                    ]
+                  },
+                  "name": {
+                    "references": [
+                      "var.container_name"
+                    ]
+                  },
+                  "ports": [
+                    {
+                      "external": {
+                        "references": [
+                          "var.nginx_port"
+                        ]
+                      },
+                      "internal": {
+                        "constant_value": 80
+                      }
+                    }
+                  ]
+                },
+                "schema_version": 2
+              },
+              {
+                "address": "docker_image.nginx",
+                "mode": "managed",
+                "type": "docker_image",
+                "name": "nginx",
+                "provider_config_key": "docker",
+                "expressions": {
+                  "keep_locally": {
+                    "constant_value": false
+                  },
+                  "name": {
+                    "constant_value": "nginx:latest"
+                  }
+                },
+                "schema_version": 0
+              }
+            ],
+            "variables": {
+              "container_name": {
+                "description": "NGINX container's name"
+              },
+              "nginx_port": {
+                "description": "NGINX container's external port number"
+              }
+            }
+          }
+        }
+      },
+      "variables": {
+        "secret_key": {
+          "description": "secret key for hello module"
+        }
+      }
+    }
+  },
+  "relevant_attributes": [
+    {
+      "resource": "module.hello.random_pet.server",
+      "attribute": [
+        "id"
+      ]
+    },
+    {
+      "resource": "random_pet.dog",
+      "attribute": [
+        "id"
+      ]
+    },
+    {
+      "resource": "module.nginx-pet.docker_image.nginx",
+      "attribute": [
+        "latest"
+      ]
+    },
+    {
+      "resource": "docker_image.nginx",
+      "attribute": [
+        "latest"
+      ]
+    }
+  ]
+}
